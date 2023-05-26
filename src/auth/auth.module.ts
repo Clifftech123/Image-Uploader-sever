@@ -4,11 +4,12 @@ import { UsersModule } from 'src/users/users.module';
 import { AuthService } from './auth.service';
 import { LocalStrategy } from './local.strategy';
 import { SessionSerializer } from './session.serializer';
+import { GoogleStrategy } from './google.strategy';
 
 
 @Module({
   imports: [UsersModule, PassportModule.register({ session: true })],
-  providers: [AuthService, LocalStrategy, SessionSerializer]
+  providers: [AuthService, LocalStrategy, SessionSerializer, GoogleStrategy],
 })
 export class AuthModule {}
 

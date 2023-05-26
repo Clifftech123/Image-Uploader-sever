@@ -37,4 +37,17 @@ export class UsersService {
       userId: userId,
     };
   }
+
+  // sing up google  user
+
+  googleLogin(req) {
+    if (!req.user) {
+      return 'No user from google';
+    }
+
+    return {
+      message: 'User information from google',
+      user: req.user,
+    };
+  }
 }
