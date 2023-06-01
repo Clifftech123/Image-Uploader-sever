@@ -1,7 +1,6 @@
 # Nest  mangoDB   auth API
 ## Description
 
-GitHub Copilot: Sure, here's an improved version of the description:
 
 This project is an API for user authentication built with NestJS and MongoDB. Users can register and log in to the system using a username and password. Passport.js is used for authentication, providing a secure and reliable way to manage user sessions.
 
