@@ -9,85 +9,24 @@ In addition to traditional username and password authentication, users can also 
 
 Users can also delete their account if they no longer wish to use the system. This feature is implemented securely to ensure that user data is properly deleted and cannot be recovered.
 
-The project uses modern JavaScript technologies such as npm, TypeScript, and Yarn to provide a robust and efficient development environment.
-## Installation
+The project uses modern JavaScript technologies such as npm, TypeScript, and Yarn to provide a robust and efficient development environment.GitHub Copilot: Sure, here's an improved version of the API description:
 
-```bash
-$ npm install 
-$ Yarn install
-```
+This API provides user authentication functionality using NestJS, npm, TypeScript, and Yarn. The API allows users to register, log in, and log out using a username and password. In addition, users can log in using their Google account, which provides a convenient and secure way to access the system without having to create a new account.
 
-## Running the app
+The API provides the following endpoints:
 
-```bash
-# development
-$ npm run start
+- `POST /auth/signup`: Allows users to register a new account by providing a username and password. Returns a JWT token that can be used to authenticate future requests.
 
-# watch mode
-$ npm run start:dev
+- `POST /auth/login`: Allows users to log in to the system using their username and password. Returns a JWT token that can be used to authenticate future requests.
 
-# production mode
-$ npm run start:prod
-```
+- `GET /auth/google`: Allows users to log in to the system using their Google account. Redirects the user to the Google login page.
 
-## API Endpoints
+- `GET /auth/google-redirect`: Handles the Google login callback and logs the user in to the system. Returns a JWT token that can be used to authenticate future requests.
 
-### Register User
+- `GET /auth/protected`: A protected route that requires authentication. Returns a message indicating that the user is authenticated.
 
-```bash
+- `GET /auth/logout`: Logs the user out of the system and invalidates their JWT token.
 
-POST  /auth/signup
+- `DELETE /auth/delete`: Deletes the user's account and all associated data from the system. Requires authentication.
 
-```
-
-### Login User
-
-```bash
-
-POST /auth/login
-
-```
-
-### Logout  with  google
-
-```bash
-
-GET /auth/google
-
-```
-
-
-###  Google  callback
-
-```bash
-
-GET /auth/google-redirect
-```
-
-
-###  Protected route
-
-```bash
-
-GET  /auth/protected
-
-```
-
-### Logout
-
-```bash
-
-
-GET /auth/logout
-
-```
-
-
-
-### Delete User
-
-```bash
-
-DELETE /auth/delete
-
-```
+The API is built using modern JavaScript technologies such as npm, TypeScript, and Yarn, providing a robust and efficient development environment.
