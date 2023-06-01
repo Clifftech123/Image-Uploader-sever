@@ -7,9 +7,9 @@ import { Injectable } from '@nestjs/common';
 export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
   constructor() {
     super({
-      clientID:"206843992574-u35jtkqidkbbvjell8ube6e5s6anmquc.apps.googleusercontent.com",
-      clientSecret:"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",
-      callbackURL: 'http://localhost:3000/auth/google-redirect',
+      clientID:process.env.GOOGLE_CLIENT_ID,
+      clientSecret:process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL:  process.env.GOOGLE_CALLBACK_URL,
       scope: ['email', 'profile'],
     });
   }
@@ -33,3 +33,6 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
     done(null, user);
   }
 }
+
+
+//  the nmae f rom win 
